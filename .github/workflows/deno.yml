@@ -1,0 +1,13 @@
+name: deno basic ci
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  deno_fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v1
+      - run: deno task fmt:check
